@@ -1,6 +1,8 @@
 class artifactory($jdk = "java-1.6.0-openjdk",
-  $sourceforge_mirror = "http://cdnetworks-us-2.dl.sourceforge.net/project",
+  $sourceforge_mirror = "http://download.sourceforge.net/project",
   $version = "2.5.1.1") {
+
+#  http://downloads.sourceforge.net/project/artifactory/artifactory/2.5.1.1/artifactory-2.5.1.1.rpm
 
   # wget from https://github.com/maestrodev/puppet-wget
   include wget
@@ -12,7 +14,7 @@ class artifactory($jdk = "java-1.6.0-openjdk",
   package { 'artifactory':
     ensure => installed,
     provider => "rpm",
-    source => "$sourceforge_mirror/artifactory/artifactory/$version/artifactory-$version.rpm",
+    source => "$sourceforge/artifactory/artifactory/$version/artifactory-$version.rpm",
     require => Package[$jdk]
   }
 
