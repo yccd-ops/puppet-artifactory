@@ -19,7 +19,7 @@ class artifactory($jdk = "java-1.6.0-openjdk",
   }
 
   service { 'artifactory':
-    ensure => "true",
+    ensure    => 'running',
     enable => "true",
     hasstatus => "false",
     provider => "redhat",
