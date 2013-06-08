@@ -1,1 +1,9 @@
-/.rvmrc
+.idea
+.rvmrc
+.project
+.librarian/
+.tmp/
+pkg/
+doc/
+spec/fixtures/
+.vagrant/
