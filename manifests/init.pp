@@ -10,7 +10,7 @@ class artifactory(
     package { $jdk: ensure => installed }
   }
 
-  package { 'artifactory':
+  package { 'jfrog-artifactory-oss':
     ensure   => installed,
     provider => 'rpm',
     source   => "${bintray}/jfrog-artifactory-oss-${version}.rpm",
@@ -22,7 +22,7 @@ class artifactory(
     enable    => true,
     hasstatus => false,
     provider  => 'redhat',
-    require   => Package['artifactory']
+    require   => Package['jfrog-artifactory-oss']
   }
 
 }
