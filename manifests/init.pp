@@ -1,9 +1,9 @@
 class artifactory(
   $jdk = 'java-1.8.0-openjdk',
-  $bintray = 'https://bintray.com/artifact/download/jfrog/artifactory/',
+  $bintray = 'https://bintray.com/artifact/download/jfrog/artifactory-rpms/',
   $version = '4.2.2') {
 
-  # https://bintray.com/artifact/download/jfrog/artifactory/jfrog-artifactory-oss-4.2.2.zip
+  # https://bintray.com/artifact/download/jfrog/artifactory-rpms/jfrog-artifactory-oss-4.2.2.rpm
 
   if ! defined (Package[$jdk]) {
     package { $jdk: ensure => installed }
@@ -12,7 +12,7 @@ class artifactory(
   package { 'artifactory':
     ensure   => installed,
     provider => 'rpm',
-    source   => "${bintray}/jfrog-artifactory-oss-${version}.zip",
+    source   => "${bintray}/jfrog-artifactory-oss-${version}.rpm",
     require  => Package[$jdk]
   }
 
